@@ -39,7 +39,8 @@ class UserRepository: IUserRepository {
     }
 
     override fun create(user: User): User {
-        TODO("Not yet implemented")
+        listOfUsers.add(user)
+        return user
     }
 
     override fun findAll(): List<User> {

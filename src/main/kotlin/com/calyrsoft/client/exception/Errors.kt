@@ -52,4 +52,14 @@ class ServiceUnavailableException(override var message: String, val detail: Stri
     )
 )
 
+class IdentityConflictException(override var message: String, val detail: String): ErrorResponse(
+    body = ErrorBody(
+        message = message,
+        detail = detail,
+        errors = emptyList(),
+        status = HttpStatus.CONFLICT,
+        statusCode = HttpStatus.CONFLICT.value()
+    )
+)
+
 
